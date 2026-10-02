@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - EduGenie{% endblock %}
+
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!-- Welcome Section -->
+<div class="hero-card">
+    <div>
+        <h1>Welcome to EduGenie 🚀</h1>
+
+        <p>
+            Your AI-powered learning companion.
+            Learn, practice, understand and improve smarter.
+        </p>
+
+        <a href="/explain" class="primary-btn">
+            Start Learning →
+        </a>
+    </div>
+</div>
+
+
+<!-- Statistics -->
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon">💬</div>
+        <h2>AI Q&A</h2>
+        <p>Ask questions and get clear answers</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">💡</div>
+        <h2>Explain</h2>
+        <p>Understand difficult topics easily</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <h2>Quiz</h2>
+        <p>Test your knowledge with AI quizzes</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🗺️</div>
+        <h2>Learning Path</h2>
+        <p>Follow a structured learning roadmap</p>
+    </div>
+
+</div>
+
+
+<!-- AI Learning Tools -->
+<div class="section-header">
+    <h2>✨ AI Learning Tools</h2>
+    <p>Choose a tool and start learning.</p>
+</div>
+
+
+<div class="feature-grid">
+
+    <!-- Q&A -->
+    <div class="feature-card">
+        <div class="feature-icon">💬</div>
+
+        <h3>Ask EduGenie</h3>
+
+        <p>
+            Ask questions about programming,
+            AI, data science and more.
+        </p>
+
+        <a href="/qa" class="secondary-btn">
+            Ask a Question →
+        </a>
+    </div>
+
+
+    <!-- Explain -->
+    <div class="feature-card">
+        <div class="feature-icon">💡</div>
+
+        <h3>Explain a Topic</h3>
+
+        <p>
+            Get simple explanations and
+            real-life examples for difficult concepts.
+        </p>
+
+        <a href="/explain" class="secondary-btn">
+            Explain Topic →
+        </a>
+    </div>
+
+
+    <!-- Quiz -->
+    <div class="feature-card">
+        <div class="feature-icon">📝</div>
+
+        <h3>Generate Quiz</h3>
+
+        <p>
+            Practice your knowledge with
+            AI-generated multiple-choice questions.
+        </p>
+
+        <a href="/quiz" class="secondary-btn">
+            Take a Quiz →
+        </a>
+    </div>
+
+
+    <!-- Summary -->
+    <div class="feature-card">
+        <div class="feature-icon">📄</div>
+
+        <h3>Summarize</h3>
+
+        <p>
+            Turn long study material into
+            simple and useful summaries.
+        </p>
+
+        <a href="/summarize" class="secondary-btn">
+            Summarize →
+        </a>
+    </div>
+
+
+    <!-- Learning Path -->
+    <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+
+        <h3>Learning Path</h3>
+
+        <p>
+            Get a personalized roadmap from
+            beginner concepts to advanced topics.
+        </p>
+
+        <a href="/learning-path" class="secondary-btn">
+            Build Path →
+        </a>
+    </div>
+
+
+    <!-- Progress -->
+    <div class="feature-card">
+        <div class="feature-icon">📊</div>
+
+        <h3>Track Progress</h3>
+
+        <p>
+            View your learning activity and
+            monitor your progress.
+        </p>
+
+        <a href="/progress" class="secondary-btn">
+            View Progress →
+        </a>
+    </div>
+
+</div>
+
+
+<!-- Bottom Motivation -->
+<div class="content-card motivation-card">
+
+    <h2>🎯 Learn Something New Today</h2>
+
+    <p>
+        Choose a topic, ask EduGenie, practice with a quiz,
+        and build your knowledge step by step.
+    </p>
+
+    <a href="/learning-path" class="primary-btn">
+        Start Your Learning Journey 🚀
+    </a>
+
+</div>
+
+{% endblock %}

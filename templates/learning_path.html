@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}Learning Path - EduGenie{% endblock %}
+
+{% block page_title %}
+Learning Path
+{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+    <div>
+        <h2>Build Your Learning Path 🚀</h2>
+        <p>
+            Get a structured roadmap to learn a topic step by step.
+        </p>
+    </div>
+</div>
+
+
+<div class="card">
+
+    <form method="post" action="/learning-path">
+
+        <div class="form-group">
+
+            <label for="topic">
+                What do you want to learn?
+            </label>
+
+            <input type="text" id="topic" name="topic" placeholder="Example: Machine Learning" required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="level">
+                Your Current Level
+            </label>
+
+            <select id="level" name="level">
+
+                <option value="beginner">
+                    Beginner
+                </option>
+
+                <option value="intermediate">
+                    Intermediate
+                </option>
+
+                <option value="advanced">
+                    Advanced
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">
+
+            <i class="fa-solid fa-route"></i>
+
+            Generate Learning Path
+
+        </button>
+
+    </form>
+
+
+    {% if learning_path %}
+
+    <div class="result-box">
+
+        <div class="result-title">
+
+            <i class="fa-solid fa-route"></i>
+
+            Your Learning Path
+
+        </div>
+
+        <div>
+            {{ learning_path }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<!-- LEARNING PATH FEATURES -->
+
+<div style="margin-top:25px;">
+
+    <div class="section-header">
+
+        <div>
+            <h2>How EduGenie Helps You</h2>
+
+            <p>
+                Follow a structured approach to learning.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <!-- STEP 1 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+            </div>
+
+            <h3>1. Set Your Goal</h3>
+
+            <p>
+                Tell EduGenie what subject or skill
+                you want to learn.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;">
+
+                <i class="fa-solid fa-list-check"></i>
+
+            </div>
+
+            <h3>2. Follow the Steps</h3>
+
+            <p>
+                Learn concepts in a logical order
+                from basics to advanced topics.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 3 -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#d1fae5;color:#059669;">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+            <h3>3. Master the Topic</h3>
+
+            <p>
+                Practice what you learn and gradually
+                build deeper knowledge.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

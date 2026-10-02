@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}EduGenie{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <div>
+                <h2>EduGenie</h2>
+                <span>AI Learning Assistant</span>
+            </div>
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <a href="/" class="nav-item">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a href="/qa" class="nav-item">
+                💬 <span>Q&A</span>
+            </a>
+
+            <a href="/explain" class="nav-item">
+                💡 <span>Explain Topic</span>
+            </a>
+
+            <a href="/quiz" class="nav-item">
+                📝 <span>Quiz</span>
+            </a>
+
+            <a href="/summarize" class="nav-item">
+                📄 <span>Summary</span>
+            </a>
+
+            <a href="/learning-path" class="nav-item">
+                🗺️ <span>Learning Path</span>
+            </a>
+
+            <a href="/progress" class="nav-item">
+                📊 <span>Progress</span>
+            </a>
+
+            <a href="/settings" class="nav-item">
+                ⚙️ <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Progress</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>{% block page_title %}Welcome to EduGenie{% endblock %}</h1>
+
+                <p class="topbar-subtitle">
+                    Your AI-powered learning companion
+                </p>
+            </div>
+
+
+            <div class="user-profile">
+
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Student</strong>
+                    <span>AI Learner</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="page-content">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', path='script.js') }}"></script>
+
+</body>
+
+</html>

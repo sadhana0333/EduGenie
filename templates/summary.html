@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Summary - EduGenie{% endblock %}
+
+{% block page_title %}
+AI Summary
+{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+    <div>
+        <h2>Summarize Your Study Material 📚</h2>
+        <p>Turn long text into a short and easy-to-understand summary.</p>
+    </div>
+</div>
+
+
+<div class="card">
+
+    <form method="post" action="/summarize">
+
+        <div class="form-group">
+
+            <label for="text">
+                Enter Your Text
+            </label>
+
+            <textarea id="text" name="text" placeholder="Paste your study material, notes, or any long text here..."
+                required></textarea>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-pink">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Generate Summary
+
+        </button>
+
+    </form>
+
+
+    {% if summary %}
+
+    <div class="result-box">
+
+        <div class="result-title">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            EduGenie Summary
+
+        </div>
+
+        <div>
+            {{ summary }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<!-- SUMMARY FEATURES -->
+
+<div style="margin-top:25px;">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Why Use AI Summarization?</h2>
+
+            <p>
+                Make your study material easier to revise.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#fce7f3;color:#db2777;">
+
+                <i class="fa-solid fa-compress"></i>
+
+            </div>
+
+            <h3>Short & Clear</h3>
+
+            <p>
+                Convert lengthy content into
+                concise points.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <h3>Study Faster</h3>
+
+            <p>
+                Focus on the important information
+                without reading everything again.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#d1fae5;color:#059669;">
+
+                <i class="fa-solid fa-check-double"></i>
+
+            </div>
+
+            <h3>Easy Revision</h3>
+
+            <p>
+                Use generated summaries for
+                quick revision before exams.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

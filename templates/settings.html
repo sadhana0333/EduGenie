@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - EduGenie{% endblock %}
+
+{% block page_title %}Settings{% endblock %}
+
+{% block content %}
+
+<div class="hero-card">
+    <h1>⚙️ EduGenie Settings</h1>
+    <p>Customize your learning experience.</p>
+</div>
+
+<div class="content-card">
+
+    <h2>👤 Student Profile</h2>
+
+    <label>Student Name</label>
+    <input type="text" placeholder="Enter your name">
+
+    <label>Learning Level</label>
+    <select>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+    </select>
+
+    <button class="primary-btn">
+        Save Settings
+    </button>
+
+</div>
+
+{% endblock %}

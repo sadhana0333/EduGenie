@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}Explain Topic - EduGenie{% endblock %}
+
+{% block page_title %}
+Explain Topic
+{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+    <div>
+        <h2>Understand Any Topic 💡</h2>
+        <p>Let EduGenie explain difficult concepts in a simple way.</p>
+    </div>
+</div>
+
+
+<div class="card">
+
+    <form method="post" action="/explain">
+
+        <div class="form-group">
+
+            <label for="topic">
+                Enter a Topic
+            </label>
+
+            <input type="text" id="topic" name="topic" placeholder="Example: Neural Networks" required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="level">
+                Explanation Level
+            </label>
+
+            <select id="level" name="level">
+
+                <option value="beginner">
+                    Beginner
+                </option>
+
+                <option value="intermediate">
+                    Intermediate
+                </option>
+
+                <option value="advanced">
+                    Advanced
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            Explain Topic
+
+        </button>
+
+    </form>
+
+
+    {% if explanation %}
+
+    <div class="result-box">
+
+        <div class="result-title">
+
+            <i class="fa-solid fa-robot"></i>
+
+            EduGenie Explanation
+
+        </div>
+
+        <div>
+            {{ explanation }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<!-- EXAMPLE TOPICS -->
+
+<div style="margin-top:25px;">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Popular Topics</h2>
+
+            <p>
+                Choose a topic to get started
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <!-- MACHINE LEARNING -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+                Understand how machines learn
+                patterns from data.
+            </p>
+
+            <button class="btn btn-primary" onclick="setTopic('Machine Learning')">
+
+                Explain
+
+            </button>
+
+        </div>
+
+
+        <!-- DEEP LEARNING -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+            </div>
+
+            <h3>Deep Learning</h3>
+
+            <p>
+                Learn the fundamentals of neural
+                networks and deep learning.
+            </p>
+
+            <button class="btn btn-blue" onclick="setTopic('Deep Learning')">
+
+                Explain
+
+            </button>
+
+        </div>
+
+
+        <!-- DATABASE -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#d1fae5;color:#059669;">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+            <h3>Databases</h3>
+
+            <p>
+                Understand databases, tables,
+                queries, and data storage.
+            </p>
+
+            <button class="btn btn-green" onclick="setTopic('Database Management System')">
+
+                Explain
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

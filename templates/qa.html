@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}Q&A - EduGenie{% endblock %}
+
+{% block page_title %}
+AI Q&A
+{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+    <div>
+        <h2>Ask EduGenie 🤖</h2>
+        <p>Ask a question and get an AI-powered answer.</p>
+    </div>
+</div>
+
+
+<div class="card">
+
+    <form method="post" action="/qa">
+
+        <div class="form-group">
+
+            <label for="question">
+                Your Question
+            </label>
+
+            <textarea id="question" name="question" placeholder="Example: What is machine learning?"
+                required></textarea>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Ask EduGenie
+
+        </button>
+
+    </form>
+
+
+    {% if answer %}
+
+    <div class="result-box">
+
+        <div class="result-title">
+
+            <i class="fa-solid fa-robot"></i>
+
+            EduGenie Answer
+
+        </div>
+
+        <div>
+            {{ answer }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<!-- QUICK QUESTIONS -->
+
+<div style="margin-top:25px;">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Quick Questions</h2>
+
+            <p>
+                Try one of these example questions
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                Learn the basic concepts of AI
+                in a simple way.
+            </p>
+
+            <button class="btn btn-blue" onclick="setQuestion('What is Artificial Intelligence?')">
+
+                Ask this
+
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#d1fae5;color:#059669;">
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+            <h3>Data Science</h3>
+
+            <p>
+                Understand how data science
+                works and where it is used.
+            </p>
+
+            <button class="btn btn-green" onclick="setQuestion('What is Data Science?')">
+
+                Ask this
+
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#fef3c7;color:#d97706;">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            <h3>Programming</h3>
+
+            <p>
+                Get simple explanations for
+                programming concepts.
+            </p>
+
+            <button class="btn btn-orange" onclick="setQuestion('What is Python programming?')">
+
+                Ask this
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

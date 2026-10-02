@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduGenie - AI Learning Companion</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Background decorations -->
+
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+    <div class="blob blob-three"></div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-circle">
+                🧠
+            </div>
+
+            <div>
+
+                <h1>Edu<span>Genie</span></h1>
+
+                <p>Your AI Learning Companion</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="powered">
+
+            ✨ Powered by Gemini
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- Welcome -->
+
+        <section class="welcome">
+
+            <div class="hello">
+                👋 Hello, Learner!
+            </div>
+
+            <h2>
+                What do you want to
+                <span>learn today?</span>
+            </h2>
+
+            <p>
+                Ask questions, understand difficult topics,
+                practice quizzes and build your learning journey
+                with AI.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= LEARNING MODES ================= -->
+
+        <section class="modes">
+
+            <div class="mode-card active" data-mode="qa" onclick="selectMode('qa')">
+
+                <div class="mode-icon purple">
+                    💬
+                </div>
+
+                <div>
+
+                    <h3>Ask Me</h3>
+
+                    <p>
+                        Get instant answers
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="mode-card" data-mode="explain" onclick="selectMode('explain')">
+
+                <div class="mode-icon blue">
+                    💡
+                </div>
+
+                <div>
+
+                    <h3>Explain</h3>
+
+                    <p>
+                        Make concepts simple
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="mode-card" data-mode="quiz" onclick="selectMode('quiz')">
+
+                <div class="mode-icon orange">
+                    📝
+                </div>
+
+                <div>
+
+                    <h3>Quiz Me</h3>
+
+                    <p>
+                        Test your knowledge
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="mode-card" data-mode="summarize" onclick="selectMode('summarize')">
+
+                <div class="mode-icon green">
+                    📚
+                </div>
+
+                <div>
+
+                    <h3>Summarize</h3>
+
+                    <p>
+                        Learn the important points
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="mode-card" data-mode="learn" onclick="selectMode('learn')">
+
+                <div class="mode-icon pink">
+                    🚀
+                </div>
+
+                <div>
+
+                    <h3>Learn Path</h3>
+
+                    <p>
+                        Learn step-by-step
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= AI WORKSPACE ================= -->
+
+        <section class="workspace">
+
+
+            <!-- Input -->
+
+            <div class="input-section">
+
+                <div class="section-label">
+
+                    <span id="inputEmoji">
+                        💬
+                    </span>
+
+                    <span id="inputTitle">
+                        Ask EduGenie anything
+                    </span>
+
+                </div>
+
+
+                <textarea id="inputText" placeholder="Type your question here..." maxlength="5000"></textarea>
+
+
+                <div class="bottom-row">
+
+                    <span id="charCount">
+                        0 / 5000
+                    </span>
+
+
+                    <button id="submitButton" onclick="submitTask()">
+
+                        <span id="buttonText">
+                            Ask EduGenie
+                        </span>
+
+                        <span class="send-icon">
+                            ✨
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Result -->
+
+            <div class="result-section">
+
+                <div class="result-top">
+
+                    <div class="ai-avatar">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h3>EduGenie</h3>
+
+                        <p>
+                            AI Learning Assistant
+                        </p>
+
+                    </div>
+
+                    <div class="online">
+                        ● Online
+                    </div>
+
+                </div>
+
+
+                <div id="result" class="result">
+
+                    <div class="welcome-result">
+
+                        <div class="big-emoji">
+                            🌟
+                        </div>
+
+                        <h3>
+                            I'm ready to help!
+                        </h3>
+
+                        <p>
+                            Choose a learning mode above
+                            and start learning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= QUICK IDEAS ================= -->
+
+        <section class="ideas">
+
+            <h3>
+                ✨ Try asking me...
+            </h3>
+
+
+            <div class="idea-container">
+
+                <button onclick="useExample(
+                        'Explain photosynthesis in simple words'
+                    )">
+
+                    🌱 Explain Photosynthesis
+
+                </button>
+
+
+                <button onclick="useExample(
+                        'What is machine learning?'
+                    )">
+
+                    🤖 What is Machine Learning?
+
+                </button>
+
+
+                <button onclick="useExample(
+                        'Explain SQL joins with an example'
+                    )">
+
+                    💻 Explain SQL Joins
+
+                </button>
+
+
+                <button onclick="useExample(
+                        'Create a learning path for Python'
+                    )">
+
+                    🐍 Learn Python
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+            🧠 <b>EduGenie</b>
+        </div>
+
+        <span>
+            Learn • Understand • Practice • Grow 🚀
+        </span>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        let currentMode = "qa";
+
+
+        const modeInfo = {
+
+            qa: {
+
+                title:
+                    "Ask EduGenie anything",
+
+                placeholder:
+                    "Type your question here...",
+
+                button:
+                    "Ask EduGenie",
+
+                emoji:
+                    "💬"
+
+            },
+
+
+            explain: {
+
+                title:
+                    "What should I explain?",
+
+                placeholder:
+                    "Enter a topic you want explained simply...",
+
+                button:
+                    "Explain Topic",
+
+                emoji:
+                    "💡"
+
+            },
+
+
+            quiz: {
+
+                title:
+                    "Ready to test yourself?",
+
+                placeholder:
+                    "Paste a topic or passage to create your quiz...",
+
+                button:
+                    "Create Quiz",
+
+                emoji:
+                    "📝"
+
+            },
+
+
+            summarize: {
+
+                title:
+                    "Make your notes shorter",
+
+                placeholder:
+                    "Paste the paragraph or study material here...",
+
+                button:
+                    "Summarize",
+
+                emoji:
+                    "📚"
+
+            },
+
+
+            learn: {
+
+                title:
+                    "Build your learning journey",
+
+                placeholder:
+                    "What topic do you want to learn?",
+
+                button:
+                    "Create Learning Path",
+
+                emoji:
+                    "🚀"
+
+            }
+
+        };
+
+
+
+        /* ================= SELECT MODE ================= */
+
+
+        function selectMode(mode) {
+
+            currentMode = mode;
+
+
+            document
+                .querySelectorAll(".mode-card")
+                .forEach(card => {
+
+                    card.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            document
+                .querySelector(
+                    `[data-mode="${mode}"]`
+                )
+                .classList.add("active");
+
+
+            const info =
+                modeInfo[mode];
+
+
+            document
+                .getElementById("inputTitle")
+                .textContent =
+                info.title;
+
+
+            document
+                .getElementById("inputEmoji")
+                .textContent =
+                info.emoji;
+
+
+            document
+                .getElementById("inputText")
+                .placeholder =
+                info.placeholder;
+
+
+            document
+                .getElementById("buttonText")
+                .textContent =
+                info.button;
+
+        }
+
+
+
+        /* ================= CHARACTER COUNT ================= */
+
+
+        document
+            .getElementById("inputText")
+            .addEventListener(
+                "input",
+                function () {
+
+                    const length =
+                        this.value.length;
+
+
+                    document
+                        .getElementById(
+                            "charCount"
+                        )
+                        .textContent =
+                        length + " / 5000";
+
+                }
+            );
+
+
+
+        /* ================= EXAMPLE ================= */
+
+
+        function useExample(text) {
+
+            document
+                .getElementById("inputText")
+                .value = text;
+
+
+            document
+                .getElementById("inputText")
+                .dispatchEvent(
+                    new Event("input")
+                );
+
+
+            document
+                .getElementById("inputText")
+                .focus();
+
+        }
+
+
+
+        /* ================= SUBMIT ================= */
+
+
+        async function submitTask() {
+
+
+            const input =
+                document
+                    .getElementById("inputText")
+                    .value
+                    .trim();
+
+
+            const result =
+                document
+                    .getElementById("result");
+
+
+            const button =
+                document
+                    .getElementById(
+                        "submitButton"
+                    );
+
+
+            const buttonText =
+                document
+                    .getElementById(
+                        "buttonText"
+                    );
+
+
+            if (!input) {
+
+                result.innerHTML = `
+
+                    <div class="message error">
+
+                        <div class="message-icon">
+                            ⚠️
+                        </div>
+
+                        <h3>
+                            Oops! Nothing entered
+                        </h3>
+
+                        <p>
+                            Type something above
+                            and I'll help you learn.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            /* Loading */
+
+            button.disabled = true;
+
+
+            buttonText.textContent =
+                "Thinking...";
+
+
+            result.innerHTML = `
+
+                <div class="loading">
+
+                    <div class="thinking">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <h3>
+                        EduGenie is thinking...
+                    </h3>
+
+                    <p>
+                        Creating your personalized response ✨
+                    </p>
+
+                </div>
+
+            `;
+
+
+            let endpoint;
+
+            let fieldName;
+
+
+            if (currentMode === "qa") {
+
+                endpoint = "/qa";
+                fieldName = "question";
+
+            }
+
+            else if (
+                currentMode === "explain"
+            ) {
+
+                endpoint = "/explain";
+                fieldName = "topic";
+
+            }
+
+            else if (
+                currentMode === "quiz"
+            ) {
+
+                endpoint = "/quiz";
+                fieldName = "passage";
+
+            }
+
+            else if (
+                currentMode === "summarize"
+            ) {
+
+                endpoint = "/summarize";
+                fieldName = "text";
+
+            }
+
+            else if (
+                currentMode === "learn"
+            ) {
+
+                endpoint =
+                    "/learn/recommendations";
+
+                fieldName = "topic";
+
+            }
+
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                fieldName,
+                input
+            );
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+                        endpoint,
+                        {
+
+                            method: "POST",
+
+                            body: formData
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.detail ||
+                        "Something went wrong."
+                    );
+
+                }
+
+
+                if (
+                    currentMode === "qa"
+                ) {
+
+                    showResponse(
+                        "Answer",
+                        data.answer
+                    );
+
+                }
+
+
+                else if (
+                    currentMode === "explain"
+                ) {
+
+                    showResponse(
+                        "Explanation",
+                        data.explanation
+                    );
+
+                }
+
+
+                else if (
+                    currentMode === "summarize"
+                ) {
+
+                    showResponse(
+                        "Summary",
+                        data.summary
+                    );
+
+                }
+
+
+                else if (
+                    currentMode === "learn"
+                ) {
+
+                    showResponse(
+                        "Your Learning Path",
+                        data.recommendations
+                    );
+
+                }
+
+
+                else if (
+                    currentMode === "quiz"
+                ) {
+
+                    showQuiz(
+                        data.quiz
+                    );
+
+                }
+
+            }
+
+
+            catch (error) {
+
+                result.innerHTML = `
+
+                    <div class="message error">
+
+                        <div class="message-icon">
+                            😕
+                        </div>
+
+                        <h3>
+                            Something went wrong
+                        </h3>
+
+                        <p>
+                            ${escapeHTML(
+                    error.message
+                )}
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            finally {
+
+                button.disabled = false;
+
+                buttonText.textContent =
+                    modeInfo[
+                        currentMode
+                    ].button;
+
+            }
+
+        }
+
+
+
+        /* ================= NORMAL RESPONSE ================= */
+
+
+        function showResponse(
+            title,
+            text
+        ) {
+
+            const result =
+                document
+                    .getElementById(
+                        "result"
+                    );
+
+
+            result.innerHTML = `
+
+                <div class="response">
+
+                    <div class="response-heading">
+
+                        <div class="check">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                ${title}
+                            </h3>
+
+                            <span>
+                                Generated by EduGenie
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="response-body">
+
+                        ${escapeHTML(text)}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        /* ================= QUIZ ================= */
+
+
+        function showQuiz(quiz) {
+
+
+            const result =
+                document
+                    .getElementById(
+                        "result"
+                    );
+
+
+            if (
+                !Array.isArray(quiz)
+            ) {
+
+                showResponse(
+                    "Quiz",
+                    JSON.stringify(
+                        quiz,
+                        null,
+                        2
+                    )
+                );
+
+                return;
+
+            }
+
+
+            let html = `
+
+                <div class="quiz-result">
+
+                    <div class="quiz-title">
+
+                        <div class="quiz-trophy">
+                            🏆
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Your Quiz
+                            </h3>
+
+                            <p>
+                                Test your understanding
+                            </p>
+
+                        </div>
+
+                    </div>
+
+            `;
+
+
+            quiz.forEach(
+                (question, index) => {
+
+
+                    html += `
+
+                        <div class="question">
+
+                            <div class="question-top">
+
+                                <span>
+                                    Question ${index + 1}
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                ${escapeHTML(
+                        question.question
+                    )}
+                            </h3>
+
+
+                            <div class="options">
+
+                    `;
+
+
+                    question.options.forEach(
+                        (option, optionIndex) => {
+
+                            html += `
+
+                                <div class="option">
+
+                                    <span>
+                                        ${String.fromCharCode(
+                                65 + optionIndex
+                            )}
+                                    </span>
+
+                                    ${escapeHTML(
+                                option
+                            )}
+
+                                </div>
+
+                            `;
+
+                        }
+                    );
+
+
+                    html += `
+
+                            </div>
+
+                            <div class="answer">
+
+                                ✓ Correct answer:
+                                <b>
+                                    ${escapeHTML(
+                        question.correct_answer
+                    )}
+                                </b>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            html += `
+                </div>
+            `;
+
+
+            result.innerHTML =
+                html;
+
+        }
+
+
+
+        /* ================= ESCAPE HTML ================= */
+
+
+        function escapeHTML(text) {
+
+
+            if (
+                typeof text !== "string"
+            ) {
+
+                text =
+                    JSON.stringify(
+                        text
+                    );
+
+            }
+
+
+            return text
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                )
+
+                .replace(
+                    /\n/g,
+                    "<br>"
+                );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+<div class="features">
+
+    <button class="feature-button qa-button">
+        💬 Q&A
+    </button>
+
+    <button class="feature-button explain-button">
+        💡 Explain
+    </button>
+
+    <button class="feature-button quiz-button">
+        📝 Quiz
+    </button>
+
+    <button class="feature-button summary-button">
+        📚 Summary
+    </button>
+
+    <button class="feature-button learning-button">
+        🚀 Learning Path
+    </button>
+
+</div>

@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz - EduGenie{% endblock %}
+
+{% block page_title %}
+AI Quiz
+{% endblock %}
+
+{% block content %}
+
+<div class="section-header">
+    <div>
+        <h2>Test Your Knowledge 📝</h2>
+        <p>Generate an AI-powered quiz from any topic.</p>
+    </div>
+</div>
+
+
+<div class="card">
+
+    <form method="post" action="/quiz">
+
+        <div class="form-group">
+
+            <label for="topic">
+                Quiz Topic
+            </label>
+
+            <input type="text" id="topic" name="topic" placeholder="Example: Python Programming" required>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="num_questions">
+                Number of Questions
+            </label>
+
+            <select id="num_questions" name="num_questions">
+
+                <option value="5">5 Questions</option>
+
+                <option value="10">10 Questions</option>
+
+                <option value="15">15 Questions</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="difficulty">
+                Difficulty
+            </label>
+
+            <select id="difficulty" name="difficulty">
+
+                <option value="easy">
+                    Easy
+                </option>
+
+                <option value="medium">
+                    Medium
+                </option>
+
+                <option value="hard">
+                    Hard
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-green">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            Generate Quiz
+
+        </button>
+
+    </form>
+
+
+    {% if quiz %}
+
+    <div class="result-box">
+
+        <div class="result-title">
+
+            <i class="fa-solid fa-clipboard-question"></i>
+
+            Generated Quiz
+
+        </div>
+
+        <div>
+            {{ quiz }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<!-- QUIZ TOPICS -->
+
+<div style="margin-top:25px;">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Try These Topics</h2>
+
+            <p>
+                Generate a quiz from a popular subject
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;">
+
+                <i class="fa-brands fa-python"></i>
+
+            </div>
+
+            <h3>Python</h3>
+
+            <p>
+                Test your knowledge of Python
+                programming concepts.
+            </p>
+
+            <button class="btn btn-blue" onclick="setQuizTopic('Python Programming')">
+
+                Generate Quiz
+
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                Challenge yourself with AI
+                concepts and fundamentals.
+            </p>
+
+            <button class="btn btn-primary" onclick="setQuizTopic('Artificial Intelligence')">
+
+                Generate Quiz
+
+            </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon" style="background:#d1fae5;color:#059669;">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <h3>Data Science</h3>
+
+            <p>
+                Test your understanding of
+                data science concepts.
+            </p>
+
+            <button class="btn btn-green" onclick="setQuizTopic('Data Science')">
+
+                Generate Quiz
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
